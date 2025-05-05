@@ -1,6 +1,8 @@
+import "dotenv/config";
 import express from "express";
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const hostname = "127.0.0.1";
 
 app.use(express.json());
@@ -40,14 +42,14 @@ app.put("/products/:id", (req, res) => {
 });
 
 //delete item
-app.delete('/products/:id',(req,res)=>{
-  const index =   cafeMenu.findIndex(t=>t.id ===parseInt(req.params.id))
-    if(index === -1){
-      return res.status(404).send("item not found")
-    }
-    cafeMenu.splice(index,1)
-    return res.status(200).send("deleted")
-})
+app.delete("/products/:id", (req, res) => {
+  const index = cafeMenu.findIndex((t) => t.id === parseInt(req.params.id));
+  if (index === -1) {
+    return res.status(404).send("item not found");
+  }
+  cafeMenu.splice(index, 1);
+  return res.status(200).send("deleted");
+});
 
 app.listen(port, hostname, () => {
   console.log(`server is running ${port}`);
