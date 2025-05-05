@@ -1,0 +1,23 @@
+{
+  "name": "cafe-manager",
+  "version": "1.0.0",
+  "description": "a simple manager for a cafe",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "cafe"
+  ],
+  "author": "ayham",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
